@@ -25,10 +25,6 @@ sudo apt install git-all
 
 sudo apt install curl
 
-#install homebrew
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 #install vagrant
 
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
