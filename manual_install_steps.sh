@@ -42,8 +42,7 @@ sudo apt-get install virtualbox—ext–pack
 
 #install ansible 
 
-sudo apt install software-properties-common
-brew install ansible
+sudo apt install ansible
 
 #install gimp 
 
