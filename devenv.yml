@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    - user: 'zozitak'
+
+  tasks:
+    - name: "apt install"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name:
+          - git-all
+          - curl
+          - virtualbox
+          - virtualbox—ext–pack
+          - vagrant
+        state: present
+        
+    # Install a snap with classic confinement
+    - name: snap Install with option --classic
+      community.general.snap:
+        name: 
+          - inkscape
+          - gimp
+          - blender
+          - code
+        classic: true
+        state: present
