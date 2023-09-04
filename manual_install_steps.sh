@@ -17,37 +17,8 @@ else
     rm -f google-chrome-stable_current_i386.deb
 fi
 
-#install git
-
-sudo apt install git-all
- 
-#install curl
-
-sudo apt install curl
-
-#install vagrant
-
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install vagrant
-
-#install virtualbox
-
-sudo apt-get install virtualbox
-sudo apt-get install virtualbox—ext–pack
-
 #install ansible 
 
 sudo apt install ansible
-
-#install gimp 
-
-sudo snap install gimp
-
-#install blender
-
-sudo snap install blender --classic
-
-#install vscode
-
-sudo snap install code --classic
+#snap collection for ansible
+ansible-galaxy collection install community.general
