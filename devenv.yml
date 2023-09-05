@@ -60,7 +60,6 @@
     - name: "Install Discord"
       community.general.snap:
         name: discord
-        classic: true
         state: present
         
     - name: Does the Google apt file exist?
