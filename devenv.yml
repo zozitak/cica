@@ -6,26 +6,54 @@
     - apt_file: /etc/apt/sources.list.d/google-chrome.list
 
   tasks:
-    - name: "apt install"
+    - name: "Install Git"
       register: updatesys
       apt:
         update_cache: yes
-        name:
-          - git-all
-          - curl
-          - virtualbox
-          - virtualbox—ext–pack
-          - vagrant
+        name: git-all
+        state: present
+
+    - name: "Install Curl"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: curl
+        state: present
+
+    - name: "Install Virtualbox"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: virtualbox
+        state: present
+
+    - name: "Install Vagrant"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: vagrant
         state: present
         
-    # Install a snap with classic confinement
-    - name: snap Install with option --classic
+    - name: "Install Inkscape"
       community.general.snap:
-        name: 
-          - inkscape
-          - gimp
-          - blender
-          - code
+        name: inkscape
+        state: present
+
+    - name: "Install Gimp"
+      community.general.snap:
+        name: gimp
+        classic: true
+        state: present
+
+    - name: "Install Blender"
+      community.general.snap:
+        name: blender
+        classic: true
+        state: present
+
+    - name: "Install Visual Studio Code"
+      community.general.snap:
+        name: code
         classic: true
         state: present
         
@@ -47,4 +75,4 @@
       when: google_apt_exists.rc == 1
       
     - name: Install Google Chrome
-      apt: pkg=google-chrome-stable state=installed
+      apt: pkg=google-chrome-stable state=present
