@@ -33,6 +33,13 @@
         update_cache: yes
         name: vagrant
         state: present
+
+    - name: "Install Libre Office"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: libreoffice
+        state: present
         
     - name: "Install Inkscape"
       community.general.snap:
