@@ -1,4 +1,4 @@
-snap install microk8s
+snap install microk8s --classic
 # now enable some essential stuff
 microk8s.enable dns storage rbac
  
