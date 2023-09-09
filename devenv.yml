@@ -40,6 +40,13 @@
         update_cache: yes
         name: libreoffice
         state: present
+
+    - name: "Install Calibre"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: calibre
+        state: present
         
     - name: "Install Inkscape"
       community.general.snap:
