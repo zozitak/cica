@@ -20,6 +20,13 @@
         name: curl
         state: present
 
+    - name: "Install Stow"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: stow
+        state: present
+
     - name: "Install Virtualbox"
       register: updatesys
       apt:
