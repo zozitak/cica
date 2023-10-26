@@ -27,6 +27,13 @@
         name: htop
         state: present
 
+    - name: "Install Xclip"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: xclip
+        state: present
+
     - name: "Install Virtualbox"
       register: updatesys
       apt:
