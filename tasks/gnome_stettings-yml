@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  become: yes
-
-  tasks:
-    - name: 
-      ansible.builtin.command: dconf load / < $HOME/.config/dconf/zozitak.txt
