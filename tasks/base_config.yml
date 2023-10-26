@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Clone dotfiles Repository
+      ansible.builtin.command: git clone --bare https://github.com/zozitak/.dotfiles.git $HOME/.dotfiles
+      args:
+        creates: $HOME/.dotfiles
+
+    - name: 
+      ansible.builtin.command: alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+    - name: 
+      ansible.builtin.command: dotfiles checkout -f
+
+    - name: 
+      ansible.builtin.command: dotfiles config --local status.showUntrackedFiles no
