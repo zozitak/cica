@@ -9,3 +9,4 @@
   tasks:
     - import_tasks: tasks/install.yml
     - import_tasks: tasks/base_config.yml
+    - import_tasks: tasks/update_sources.yml

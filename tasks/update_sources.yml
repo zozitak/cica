@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: 
+      ansible.builtin.command: exec bash
+    - name: 
+      ansible.builtin.command: tmux source $HOME/.tmux.conf   
