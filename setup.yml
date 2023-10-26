@@ -4,7 +4,8 @@
 
   vars_files:
     - vars/install.yml
-    - vars/config.yml
+    - vars/base_config.yml
 
   tasks:
     - import_tasks: tasks/install.yml
+    - import_tasks: tasks/base_config.yml
