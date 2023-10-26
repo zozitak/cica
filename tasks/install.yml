@@ -58,6 +58,13 @@
         update_cache: yes
         name: calibre
         state: present
+
+    - name: "Install Tree"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: tree
+        state: present
         
     - name: "Install Inkscape"
       community.general.snap:
