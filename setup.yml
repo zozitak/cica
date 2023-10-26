@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/install.yml
+    - vars/config.yml
+
+  tasks:
+    - import_tasks: tasks/install.yml
