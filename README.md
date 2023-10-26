@@ -1,2 +1,2 @@
 # cica
-Common Initial Configuration Automaticly
+Common Initial Configuration Automated
