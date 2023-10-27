@@ -3,16 +3,5 @@
   become: yes
 
   tasks:
-    - name: Clone dotfiles Repository
-      ansible.builtin.command: "git clone --bare https://github.com/zozitak/.dotfiles.git '{{ lookup('ansible.builtin.env', 'HOME') }}'/.dotfiles"
-      args:
-        creates: "'{{ lookup('ansible.builtin.env', 'HOME') }}'/.dotfiles"
-
-    - name: 
-      ansible.builtin.command: "alias dotfiles=/usr/bin/git --git-dir='{{ lookup('ansible.builtin.env', 'HOME') }}'/.dotfiles/ --work-tree='{{ lookup('ansible.builtin.env', 'HOME') }}'"
-
-    - name: 
-      ansible.builtin.command: dotfiles checkout -f
-
-    - name: 
-      ansible.builtin.command: dotfiles config --local status.showUntrackedFiles no
+    - name: Run base config script
+      ansible.builtin.command: sh base_config.sh
