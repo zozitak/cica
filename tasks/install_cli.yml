@@ -1,0 +1,46 @@
+---
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: "Install Git"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: git-all
+        state: present
+
+    - name: "Install Curl"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: curl
+        state: present
+
+    - name: "Install Htop"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: htop
+        state: present
+
+    - name: "Install Xclip"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: xclip
+        state: present
+
+    - name: "Install Tree"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: tree
+        state: present
+
+    - name: "Install Tmux"
+      register: updatesys
+      apt:
+        update_cache: yes
+        name: tmux
+        state: present
