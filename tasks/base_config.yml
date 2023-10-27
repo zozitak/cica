@@ -9,7 +9,7 @@
         creates: {{ lookup('env', 'HOME') }}/.dotfiles
 
     - name: 
-      ansible.builtin.command: alias dotfiles=/usr/bin/git --git-dir={{ lookup('env', 'HOME') }}/.dotfiles/ --work-tree={{ lookup('env', 'HOME') }}
+      ansible.builtin.command: alias dotfiles=/usr/bin/git --git-dir="{{ lookup('env', 'HOME') }}"/.dotfiles/ --work-tree="{{ lookup('env', 'HOME') }}"
 
     - name: 
       ansible.builtin.command: dotfiles checkout -f
