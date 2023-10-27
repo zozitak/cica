@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  become: yes
-
   tasks:
     - name: Run base config script
       ansible.builtin.command: sh base_config.sh
