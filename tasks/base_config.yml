@@ -4,12 +4,12 @@
 
   tasks:
     - name: Clone dotfiles Repository
-      ansible.builtin.command: git clone --bare https://github.com/zozitak/.dotfiles.git $HOME/.dotfiles
+      ansible.builtin.command: git clone --bare https://github.com/zozitak/.dotfiles.git {{ lookup('env', 'HOME') }}/.dotfiles
       args:
-        creates: $HOME/.dotfiles
+        creates: {{ lookup('env', 'HOME') }}/.dotfiles
 
     - name: 
-      ansible.builtin.command: alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+      ansible.builtin.command: alias dotfiles=/usr/bin/git --git-dir={{ lookup('env', 'HOME') }}/.dotfiles/ --work-tree={{ lookup('env', 'HOME') }}
 
     - name: 
       ansible.builtin.command: dotfiles checkout -f
