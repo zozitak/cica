@@ -3,16 +3,6 @@ Common Initial Configuration Automated
 
 Ansible & bare repo for dotfiles.
 
-GUI
-
-Desktop  
-super + 1 ,2 ,3 ,4
-1. Browser
-2. Command Line
-3. File Explorer
-4. Messenging App
-No desktop icons
-
 CLI
 
 Aliases <3  
