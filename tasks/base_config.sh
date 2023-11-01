@@ -1,5 +1,5 @@
 #!usr/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 echo "Cloning dotfiles..." 
 git clone --bare https://github.com/zozitak/.dotfiles.git $HOME/.dotfiles
