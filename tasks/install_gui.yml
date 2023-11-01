@@ -20,8 +20,7 @@
     state: present
 
 - name: "Install Gui Snapd"
-  register: updatesys
-  snapd:
+  community.general.snap:
     name:
       - blender
       - discord
