@@ -6,7 +6,7 @@
     name: "{{ item }}"
     state: present
   loop:
-   - git-al
+   - git
    - curl
    - htop
    - xclip
