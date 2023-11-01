@@ -6,7 +6,7 @@
       - snapd
     state: present 
 
-- name: "Install Gui"
+- name: "Install Gui Apt"
   vars:
     - apt_file: /etc/apt/sources.list.d/google-chrome.list
   register: updatesys
@@ -17,8 +17,12 @@
       - vagrant
       - libreoffice
       - calibre
-      - inkscape
-      - gimp
+    state: present
+
+- name: "Install Gui Snapd"
+  register: updatesys
+  snapd:
+    name:
       - blender
       - discord
     state: present
