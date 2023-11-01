@@ -12,19 +12,22 @@
   register: updatesys
   apt:
     update_cache: yes
-    name: 
+    name: "{{ item }}"
+    state: present
+    with_item:
       - virtualbox
       - vagrant
       - libreoffice
       - calibre
-    state: present
 
 - name: "Install Gui Snapd"
   community.general.snap:
-    name:
-      - blender
-      - discord
+    name: "{{ item }}"
+    classic: true
     state: present
+    with_item:
+      - blender
+      - discord    
         
 - name: Does the Google apt file exist?
   command: test -f 
