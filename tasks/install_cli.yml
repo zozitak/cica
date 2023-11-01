@@ -3,11 +3,12 @@
   register: updatesys
   apt:
     update_cache: yes
-    name: 
+    name: "{{ item }}"
+    state: present
+    loop:
       - git-all
       - curl
       - htop
       - xclip
       - tree
-      - tmux
-    state: present
+      - tmux    
