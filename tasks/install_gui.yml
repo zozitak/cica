@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   become: yes
-
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   tasks:
     - name: "Install Gui"
       register: updatesys
