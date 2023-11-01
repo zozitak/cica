@@ -11,4 +11,3 @@
     - import_tasks: tasks/install_cli.yml
     - import_tasks: tasks/install_gui.yml
     - import_tasks: tasks/base_config.yml
-    - import_tasks: tasks/gnome_settings.yml
