@@ -1,5 +1,5 @@
 ---
 - name: 
-  ansible.builtin.command: exec bash
+  shell: exec bash
 - name: 
-  ansible.builtin.command: tmux source $HOME/.tmux.conf   
+  shell: tmux source $HOME/.tmux.conf   
