@@ -5,10 +5,10 @@
     update_cache: yes
     name: "{{ item }}"
     state: present
-    loop:
-      - git-all
-      - curl
-      - htop
-      - xclip
-      - tree
-      - tmux    
+  loop:
+   - git-al
+   - curl
+   - htop
+   - xclip
+   - tree
+   - tmux    
