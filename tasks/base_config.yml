@@ -1,3 +1,3 @@
 ---
 - name: Run base config script
-  ansible.builtin.command: sh $PWD/tasks/base_config.sh
+  shell: sh $PWD/tasks/base_config.sh
