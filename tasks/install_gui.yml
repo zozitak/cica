@@ -14,7 +14,7 @@
     update_cache: yes
     name: "{{ item }}"
     state: present
-    with_item:
+    loop:
       - virtualbox
       - vagrant
       - libreoffice
@@ -25,7 +25,7 @@
     name: "{{ item }}"
     classic: true
     state: present
-    with_item:
+    loop:
       - blender
       - discord    
         
