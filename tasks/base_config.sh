@@ -1,4 +1,4 @@
-#!usr/bin/bash
+
 set -eo pipefail
 
 echo "Cloning dotfiles..." 
