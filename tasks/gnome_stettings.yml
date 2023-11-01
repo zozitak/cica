@@ -1,3 +1,0 @@
----
-- name: 
-  ansible.builtin.command: dconf load / < $HOME/.config/dconf/zozitak.txt
