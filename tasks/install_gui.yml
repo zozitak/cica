@@ -7,8 +7,6 @@
     state: present 
 
 - name: "Install Gui Apt"
-  vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   register: updatesys
   apt:
     update_cache: yes
@@ -30,21 +28,31 @@
     - discord    
         
 - name: Does the Google apt file exist?
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   command: test -f 
   register: google_apt_exists
   ignore_errors: True
       
 - name: Add Google Chrome key
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
   when: google_apt_exists.rc == 1
       
 - name: Add Google Chrome repo
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   copy: content="deb http://dl.google.com/linux/chrome/deb/ stable main" dest= owner=root group=root mode=644
   when: google_apt_exists.rc == 1
       
 - name: Update apt cache
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   apt: update_cache=yes
   when: google_apt_exists.rc == 1
       
 - name: Install Google Chrome
+  vars:
+    - apt_file: /etc/apt/sources.list.d/google-chrome.list
   apt: pkg=google-chrome-stable state=present
