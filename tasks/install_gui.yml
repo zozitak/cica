@@ -29,30 +29,32 @@
         
 - name: Does the Google apt file exist?
   vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
+    - apt_file: /etc/apt/sources.list.d/google.list
   command: test -f 
   register: google_apt_exists
   ignore_errors: True
       
 - name: Add Google Chrome key
   vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
-  shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - apt_file: /etc/apt/sources.list.d/google.list
+  shell: wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmour -o /usr/share/keyrings/chrome-keyring.gpg 
   when: google_apt_exists.rc == 1
       
-- name: Add Google Chrome repo
+- name: Add Google Chrome key
   vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
-  copy: content="deb http://dl.google.com/linux/chrome/deb/ stable main" dest= owner=root group=root mode=644
+    - apt_file: /etc/apt/sources.list.d/google.list
+  shell: sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
   when: google_apt_exists.rc == 1
       
 - name: Update apt cache
   vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
+    - apt_file: /etc/apt/sources.list.d/google.list
   apt: update_cache=yes
   when: google_apt_exists.rc == 1
       
 - name: Install Google Chrome
   vars:
-    - apt_file: /etc/apt/sources.list.d/google-chrome.list
-  apt: pkg=google-chrome-stable state=present
+    - apt_file: /etc/apt/sources.list.d/google.list
+  apt: 
+    name: google-chrome-stable 
+    state: present
