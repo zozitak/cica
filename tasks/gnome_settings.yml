@@ -1,3 +1,0 @@
----
-- name: Gnome config
-  shell: sh $PWD/tasks/gnome_settings.sh
