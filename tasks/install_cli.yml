@@ -1,17 +1,13 @@
 ---
-- hosts: localhost
-  become: yes
-
-  tasks:
-    - name: "Install Cli"
-      register: updatesys
-      apt:
-        update_cache: yes
-        name: 
-          - git-all
-          - curl
-          - htop
-          - xclip
-          - tree
-          - tmux
-        state: present
+- name: "Install Cli"
+  register: updatesys
+  apt:
+    update_cache: yes
+    name: 
+      - git-all
+      - curl
+      - htop
+      - xclip
+      - tree
+      - tmux
+    state: present
