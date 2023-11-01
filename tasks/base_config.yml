@@ -1,5 +1,3 @@
 ---
-- hosts: localhost
-  tasks:
-    - name: Run base config script
-      ansible.builtin.command: sh base_config.sh
+- name: Run base config script
+  ansible.builtin.command: sh base_config.sh
