@@ -1,5 +1,0 @@
----
-- name: 
-  shell: source $HOME/.bashrc
-- name: 
-  shell: tmux source $HOME/.tmux.conf   
