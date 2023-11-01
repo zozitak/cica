@@ -14,20 +14,20 @@
     update_cache: yes
     name: "{{ item }}"
     state: present
-    loop:
-      - virtualbox
-      - vagrant
-      - libreoffice
-      - calibre
+  loop:
+    - virtualbox
+    - vagrant
+    - libreoffice
+    - calibre
 
 - name: "Install Gui Snapd"
   community.general.snap:
     name: "{{ item }}"
     classic: true
     state: present
-    loop:
-      - blender
-      - discord    
+  loop:
+    - blender
+    - discord    
         
 - name: Does the Google apt file exist?
   command: test -f 
