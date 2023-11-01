@@ -1,4 +1,11 @@
 ---
+- Name: "Install Snap"
+  apt:
+    update_cache: yes
+    name:
+      - snapd
+    state: present 
+
 - name: "Install Gui"
   vars:
     - apt_file: /etc/apt/sources.list.d/google-chrome.list
